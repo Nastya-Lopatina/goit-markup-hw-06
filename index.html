@@ -70,7 +70,7 @@
             </button>
 
             
-            <form class=" form">
+            <form class="form js-speaker-form" action="#" autocomplete="off">
                 <h2 class="title-form">Оставьте свои данные, мы вам перезвоним</h2>
 
                 <div class="form-field" >
@@ -122,14 +122,15 @@
                         <use href="./images/icon/sprinte.svg#icon-cub"></use>
                     </svg>
 
-                    <span>Соглашаюсь с рассылкой и принимаю 
-                        <a href="">Условия договора</a></span>
+                    <span>Соглашаюсь с рассылкой и принимаю  
+                        <a href=""> Условия договора</a>
+                    </span>
                 </label>
              </div>
 
               
 
-               <!--<button class="big-button ">Отправить</button>>--> 
+               <button type="submit" class="submit-button">Отправить</button>
             </form>
             
         </div>
@@ -483,8 +484,8 @@
 
             <div class="">
                 <h3 class="invoke">Подпишитесь на рассылку</h3>
-                <div class="form-button">
-                        <form>
+                
+                        <form class="form-button"> 
                             <label for="name">
 
                                 <input class="form-footer"
@@ -494,14 +495,14 @@
                                         />
                             </label>
                             
+                                <button type="submit" class="big-button subscribe">Подписаться 
+                                    <svg width=24 height=24  class="icon-send">
+                                      <use href="./images/icon/sprinte.svg#icon-icon-send"></use>
+                                    </svg>
+                                </button>
+                                
                         </form>
 
-                    <button class="big-button subscribe">Подписаться 
-                        <svg width=24 height=24  class="icon-send">
-                            <use href="./images/icon/sprinte.svg#icon-icon-send"></use>
-                        </svg>
-                    </button>
-                </div>
                 
             </div>
         </div>
@@ -530,6 +531,19 @@
           console.log("Это клик в бекдроп");
         }
       </script>
+       <script>
+        (() => {
+            document
+                .querySelector('.js-speaker-form')
+                .addEventListener('submit', e => {
+                    e.preventDefault();
+                    new FormData(e.currentTarget).forEach((value, name) =>
+                        console.log(`${name}: ${value}`),
+                    );
+                    e.currentTarget.reset();
+                });
+        })();
+    </script>
 </body>
 </html>
 
