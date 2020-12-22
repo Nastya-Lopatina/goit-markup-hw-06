@@ -305,13 +305,13 @@ margin-left: 50px ;
   .icon-close:hover{
     fill: var(--accent-color);
   }
-
- 
   
   /*Фoрма*/
-  .title-form{
+
+   .title-form{
     margin-top: 0;
     margin-bottom: 12px;
+    
     color: var(--main-text-color);
     font-weight: 700;
     font-size: 20px;
@@ -321,86 +321,72 @@ margin-left: 50px ;
   .form-field{
     margin-bottom: 20px;
   }
-  
   .form-label{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  .form-label span{
+    display: block;
+
+    margin-top: 0;
     margin-bottom: 4px;
-    
+
+    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.16;
     letter-spacing: 0.01em;
-    color: var(--text-color);
   }
   
   .form-input{
-    padding-left: 42px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    
-    transition:  250ms cubic-bezier(0.4, 0, 0.2, 1);
-    
-    font-size: 16px;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    box-sizing: border-box;
-    border-radius: 4px;
-    cursor: pointer;
+    position: relative;
+    margin-bottom: 10px;
+    color: var(--title-text-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
+  .form-input:focus-within{
+    color: var(--accent-color);
+  }
+
   .icon-form{
     position: absolute;
+    
+    top: 50%;
     left: 12px;
-    bottom: 13.5px;
-    fill:var(--main-text-color) ;
-    
+    transform: translateY(-50%);
+
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
   }
-  
-  .comment{
+  .form-input input{
+    width: 100%;
+    padding: 11px 0 11px 42px;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .form input:focus,
+  .comment textarea:focus{
+    border-color: var(--accent-color);
+    cursor: pointer;
+    outline: 0;
+  }
+
+  .comment textarea{
+    padding: 12px 16px;
     resize: none;
-    
-    padding-top: 12px;
-    padding-right: 16px;
-    padding-bottom: 12px;
-    padding-left: 16px;
-    max-width: 448px;
-    max-height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
-  .comment::placeholder{
-    font-weight: normal;
+
+  textarea::placeholder {
     font-size: 14px;
     line-height: 1.14;
-    letter-spacing: 0.01em;
-    
     color: rgba(117, 117, 117, 0.5);
-  }
+}
+
   
-  .modal-window input:focus,
-  .modal-window textarea:focus{
-    border-color: var(--accent-color);
-    outline: none;
-    cursor: pointer;
-    
-    transition:  250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .modal-window input::placeholder{
-    cursor: pointer;
-  }
   
-  .modal-window input:focus::placeholder{
-    cursor: pointer;
-  }
-  
-  .modal-window input:focus ~.icon-form{
-    fill: var(--accent-color);
-    cursor: pointer;
-    
-    transition:  250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
   
   /*Checkbox*/ 
   .checkbox-label{
@@ -456,10 +442,14 @@ margin-left: 50px ;
     background-origin: border-box;
   }
 
-  .submit{
-   padding: 10px 0;
-   width: 200px;
-   cursor: pointer;
+  .form .submit{
+    display: flex;
+    align-items: center;
+    padding: 10px 28px;
+    width: 200px;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
  }
   
   /*section Почему именно мы*/
